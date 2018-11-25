@@ -5,8 +5,8 @@ class Header extends React.Component {
    render() {
       return (
          <div>
-            <Navbar  color="faded" light>
-               <NavbarBrand> Breath! </NavbarBrand>
+            <Navbar color="faded" light>
+               <NavbarBrand> Breath: Checkout the Air Quality in your Area! </NavbarBrand>
                <Nav />
             </Navbar>
          </div>
