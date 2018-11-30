@@ -14,17 +14,16 @@ class Select extends React.Component {
 
    clickHandler = (e) => {
       e.preventDefault();
-      let newStr = this.state.value.replace(/\s/g, '%');
+      let newStr = this.state.value.replace(/\s/g, '%20');
       axios.get(`http://api.airvisual.com/v2/city?city=${newStr}&state=California&country=USA&key=ggeahjwHQzyZkBgnZ`)
          .then((data) => {
-            console.log(data)
+            console.log(data.data.data.current)
          })
    }
 
    componentDidMount(){
       axios.get('http://api.airvisual.com/v2/cities?state=California&country=USA&key=ggeahjwHQzyZkBgnZ')
          .then((data) => {
-            console.log(data.data.data);
             this.setState({ allCities: data.data.data })
          })  
    }
